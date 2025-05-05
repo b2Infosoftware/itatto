@@ -1,0 +1,86 @@
+// SCROLLBAR
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  @apply bg-black/20
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply bg-divider-light dark:bg-divider-dark rounded-full;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  @apply cursor-pointer
+}
+
+body {
+  @apply font-main text-gray-700 dark:text-gray-200 dark:bg-slate-950;
+}
+
+.pageWrapper {
+  @apply flex h-screen overflow-hidden bg-[#F8F7FA] dark:bg-slate-950;
+
+  main {
+    @apply px-4 w-full mx-auto;
+
+
+  }
+}
+
+.container {
+  @apply px-4 max-w-none 2xl:max-w-[1536px];
+}
+
+.divider {
+
+  @apply flex w-full justify-center items-center py-4;
+
+  &:before {
+    margin-right: 1rem;
+    content: '';
+    border-top: 1px solid;
+    border-color: inherit;
+    width: 100%;
+    display: block;
+  }
+
+  &:after {
+    margin-left: 1rem;
+    content: '';
+    border-top: 1px solid;
+    border-color: inherit;
+    width: 100%;
+    display: block;
+  }
+}
+
+// transitions
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.25s;
+}
+
+.fade-enter-from {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.fade-leave-to {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+
+code {
+  @apply bg-gray-500 inline-flex items-center justify-center text-white dark:bg-slate-950 px-1 h-4 rounded text-[10px] leading-none;
+}
+
+@import 'variables';
+@import 'typography';
+@import 'forms';

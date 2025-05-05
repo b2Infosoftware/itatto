@@ -1,0 +1,17 @@
+.badge {
+  @apply text-xs inline-flex font-medium rounded text-center px-2.5 py-1 bg-divider-light items-center dark:bg-divider-dark uppercase;
+
+  &.large {
+    @apply text-sm rounded-full px-2.5 py-1;
+  }
+
+  &.sm {
+    @apply text-[10px] rounded-full px-2 py-1;
+  }
+
+  @each $color in $themeColors {
+    &.#{$color} {
+      @apply bg-#{$color}-500/40 dark:bg-#{$color}-500/20 text-#{$color}-600 dark:text-#{$color}-400;
+    }
+  }
+}

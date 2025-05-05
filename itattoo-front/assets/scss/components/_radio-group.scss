@@ -1,0 +1,41 @@
+.radio-group-wrapper {
+  label {
+    @apply text-sm block;
+  }
+
+  .buttons-wrapper {
+    @apply flex flex-wrap -space-x-px justify-center w-full;
+
+    button {
+      @apply relative font-medium text-sm flex-grow items-center justify-center border border-transparent leading-5 transition duration-150 ease-in-out px-5 py-2.5 cursor-pointer disabled:opacity-80 bg-transparent dark:text-white border-gray-400 dark:border-input-dark hover:bg-slate-100 dark:hover:bg-primary dark:hover:border-primary text-slate-700 rounded-none first:rounded-l last:rounded-r;
+
+      &.active {
+        @apply bg-primary-500 text-white border-primary-500;
+      }
+    }
+  }
+
+  &.sm {
+    label {
+      @apply text-xs;
+    }
+
+    .buttons-wrapper {
+      button {
+        @apply px-4 py-1;
+      }
+    }
+  }
+
+  &.error {
+    .buttons-wrapper {
+      button {
+        @apply border-danger-500;
+      }
+    }
+
+    .err-msg {
+      @apply text-[10px] bottom-0 text-danger-500 pl-1;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+.logsBar {
+    @apply shadow-lg bg-white dark:bg-slate-950 fixed top-0 bottom-0 z-40 w-full md:w-64 flex flex-col -right-full transition-all;
+
+    &.show {
+        @apply right-0 transition-all;
+    }
+
+    .header {
+        @apply p-4 h-16 w-full flex items-center justify-between;
+    }
+
+    .icon {
+        @apply h-8 w-8 flex items-center justify-center rounded mr-2 text-xl flex-shrink-0
+    }
+}
+
+.logsTable {
+
+    em {
+        @apply not-italic
+    }
+
+    .icon {
+        @apply h-8 w-8 flex items-center justify-center rounded mr-2 text-xl flex-shrink-0
+    }
+}

@@ -1,0 +1,25 @@
+.card {
+  @apply flex flex-col bg-white dark:bg-slate-900 shadow-md rounded-md relative p-6;
+
+  &.flat {
+    @apply shadow-none;
+  }
+
+  .card-body {
+    @apply overflow-auto;
+  }
+
+  .card-title {
+    @apply pb-6 flex items-center text-lg font-medium;
+  }
+
+  .card-footer {
+    @apply pt-6 flex items-center;
+  }
+
+  &.withFilters {
+    header {
+      @apply py-[9px];
+    }
+  }
+}

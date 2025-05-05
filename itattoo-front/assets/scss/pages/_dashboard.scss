@@ -1,0 +1,43 @@
+.dashboard-card {
+    @apply flex flex-col bg-white dark:bg-slate-900 p-4 rounded-lg relative shadow-md;
+
+    .icon-wrapper {
+        @apply p-4 rounded h-10 w-10 flex items-center justify-center;
+
+        .nuxt-icon {
+            @apply text-2xl inline-flex;
+        }
+    }
+
+    .stat {
+        @apply opacity-80 mt-4;
+    }
+
+    >div {
+        @apply flex flex-col;
+
+        &:first-child {
+            @apply flex-row items-center pl-0;
+        }
+
+        em {
+            @apply font-semibold not-italic ml-4 h-10 flex items-center text-xl;
+        }
+    }
+
+    .btn {
+        @apply absolute top-2 right-2
+    }
+}
+
+.statsCard {
+    @apply flex flex-col lg:flex-row bg-white dark:bg-slate-900 rounded-lg relative p-6 gap-4 shadow-md;
+}
+
+.percentage-bar {
+    @apply flex items-baseline rounded-full h-2 w-full bg-gray-200 dark:bg-slate-200/20 relative;
+
+    span {
+        @apply absolute left-0
+    }
+}

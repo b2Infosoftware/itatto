@@ -1,0 +1,8 @@
+.calendarPage {
+    @apply -mt-8 overflow-hidden;
+    height: calc(100dvh - 80px);
+}
+
+.calendarViewWrapper {
+    @apply flex flex-nowrap h-full rounded-t-xl overflow-hidden shadow-sm;
+}

@@ -1,0 +1,43 @@
+.upcoming-appointments {
+    @apply flex flex-col w-full bg-white dark:bg-slate-900 flex-shrink-0 text-xs z-[9] overflow-auto fixed left-0 bottom-0 top-[140px] max-md:top-[155px] max-md:border-t max-md:border-t-gray-300 md:top-0 md:relative md:max-w-[270px];
+
+    .title {
+        @apply text-sm mb-4 font-semibold;
+    }
+
+    .date {
+        @apply bg-gray-50 dark:bg-slate-800/50 px-4 py-2 mt-2 text-xs font-bold text-right;
+    }
+
+    .item {
+        @apply flex p-2 border-t first:border-t-0 border-gray-100 dark:border-slate-200/10 w-full truncate;
+
+        >span {
+            @apply flex rounded-[3px] text-lg items-center justify-center mr-2 h-[33px] w-[33px] flex-shrink-0;
+        }
+
+        .details {
+            @apply flex flex-col font-light justify-between;
+
+            .name {
+                @apply font-bold whitespace-nowrap;
+            }
+
+            .service {
+                @apply ml-1 text-[12px] whitespace-nowrap;
+            }
+
+            .bottom-row {
+                @apply flex flex-nowrap text-[11px] gap-x-1 text-[#AAAAAA] items-center italic;
+
+                i {
+                    @apply italic;
+                }
+            }
+        }
+    }
+
+    .skeleton-item {
+        @apply m-4 animate-pulse bg-gray-200 rounded-full dark:bg-slate-200/20 h-7 odd:w-2/3;
+    }
+}

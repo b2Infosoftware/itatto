@@ -1,0 +1,119 @@
+// Switch element
+.form-switch {
+  @apply relative select-none mr-3;
+  width: 44px;
+
+  label {
+    @apply block overflow-hidden cursor-pointer h-6 rounded-full bg-gray-200 dark:bg-slate-200/20;
+
+    >span:first-child {
+      @apply absolute block rounded-full bg-white;
+      width: 20px;
+      height: 20px;
+      top: 2px;
+      left: 2px;
+      right: 50%;
+      transition: all 0.15s ease-out;
+    }
+  }
+
+  input[type='checkbox'] {
+    &:checked {
+      +label {
+        @apply bg-primary;
+
+        >span:first-child {
+          left: 22px;
+        }
+      }
+
+
+    }
+
+    &:disabled {
+      +label {
+        @apply cursor-not-allowed bg-slate-100 border border-slate-200;
+
+        >span:first-child {
+          @apply bg-slate-400;
+        }
+      }
+    }
+
+    &:disabled:checked {
+      +label {
+        @apply opacity-60;
+      }
+    }
+  }
+
+  &.sm {
+    width: 36px;
+
+    label {
+      @apply h-5;
+
+      >span:first-child {
+        width: 18px;
+        height: 18px;
+        top: 1px;
+        left: 1px;
+      }
+    }
+
+    input[type='checkbox'] {
+      &:checked {
+        +label {
+          @apply bg-primary;
+
+          >span:first-child {
+            left: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.switch-container {
+  @apply flex items-center justify-center gap-5 text-xs font-bold relative mr-[100px];
+}
+
+.switch-container span.left {
+  @apply absolute text-sm left-0 w-1/2 text-center z-10 pointer-events-none;
+}
+
+.switch-container span.right {
+  @apply absolute text-sm right-0 w-1/2 text-center z-10 pointer-events-none;
+}
+
+.switch {
+  @apply relative inline-block w-[176px] h-[46px];
+}
+
+.switch strong {
+  @apply absolute top-[-12px] px-5 py-0.5 text-xs right-10 bg-success-100 text-black rounded-[5px] text-[10px];
+}
+
+.switch input {
+  @apply opacity-0 w-0 h-0;
+}
+
+
+.active-label {
+  @apply text-success-500;
+}
+
+.slider {
+  @apply absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-gray-200 border-[6px] border-gray-200 rounded-[40px] transition duration-300 flex items-center justify-between font-bold text-sm dark:bg-slate-950 dark:border-slate-950;
+}
+
+.slider:before {
+  @apply absolute w-[50%] h-full bg-white rounded-[40px] left-[50%] dark:bg-slate-800;
+  content: " ";
+  transition: 0.3s;
+}
+
+input:checked + .slider:before {
+  left: 0;
+}

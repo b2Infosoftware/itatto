@@ -1,0 +1,27 @@
+.chart-map {
+  @apply px-6 py-10;
+  svg {
+    @apply w-full h-auto;
+  }
+  * {
+    @apply transition-all;
+  }
+  .chart-map-legend {
+    @apply min-h-min bg-white border-0 absolute z-20 font-semibold rounded-sm shadow-2xl;
+  }
+  .chart-map-legend-header {
+    @apply px-4 py-2 bg-slate-100 text-base;
+  }
+  .chart-map-legend-content {
+    @apply bg-white font-medium rounded-sm border-t border-slate-100 text-sm;
+    th {
+      @apply py-1 px-2.5 border-y border-slate-200 bg-slate-50;
+    }
+    tbody {
+      @apply text-sm font-medium divide-y divide-slate-100;
+      td {
+        @apply py-1 px-2.5 border-b border-slate-100;
+      }
+    }
+  }
+}

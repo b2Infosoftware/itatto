@@ -1,0 +1,22 @@
+@import 'vue-tel-input/vue-tel-input.css';
+
+
+.form-group {
+
+    .vue-tel-input {
+        @apply flex bg-transparent border border-gray-400 text-gray-700 sm:text-sm rounded-md w-full dark:text-gray-400 dark:border-input-dark;
+
+        &:focus-within {
+            @apply shadow-none outline-none border-gray-800 dark:border-gray-300;
+        }
+
+        .vti__dropdown {
+            @apply bg-transparent;
+        }
+
+        .vti__dropdown-list {
+            @apply bg-slate-200 dark:bg-slate-900 border-slate-200 dark:border-input-dark
+        }
+    }
+
+}

@@ -1,0 +1,75 @@
+const colors = require('tailwindcss/colors');
+module.exports = {
+  content: [
+    './components/**/*.{vue,js}',
+    './layouts/**/*.vue',
+    './pages/**/*.vue',
+    './plugins/**/*.{js,ts}',
+    './error.vue',
+  ],
+  darkMode: 'selector',
+  safelist: [],
+  theme: {
+    extend: {
+      fontFamily: {
+        main: ['Roboto', 'sans-serif'],
+      },
+      boxShadow: {
+        sm: '0 2px 8px 0 rgb(47, 43, 61, .12)',
+        md: '0 3px 12px 0 rgb(47, 43, 61, .14)',
+      },
+    },
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      divider: {
+        light: 'rgba(47, 43, 61, 0.12)',
+        dark: 'rgba(225, 222, 245, 0.12)',
+      },
+      input: {
+        light: 'rgba(47, 43, 61, 0.22)',
+        dark: 'rgba(225, 222, 245, 0.22)',
+      },
+      inherit: colors.inherit,
+      black: colors.black,
+      white: colors.white,
+      gray: colors.zinc,
+      slate: {
+        DEFAULT: '#8692d0',
+        50: '#f2f5fb',
+        100: '#e7edf8',
+        200: '#d0d4f1',
+        300: '#bac7e7',
+        400: '#9dacdc',
+        500: '#8692d0',
+        600: '#6c74bf',
+        700: '#5b61a7',
+        800: '#4b5088',
+        900: '#2f3349',
+        950: '#25293c',
+      },
+      success: colors.emerald,
+      sky: colors.sky,
+      blue: colors.blue,
+      purple: colors.purple,
+      primary: {
+        DEFAULT: '#28c76f',
+        50: '#E8FCFD',
+        100: '#d4f4e2',
+        200: '#a9e9c5',
+        300: '#7edda9',
+        400: '#53d28c',
+        500: '#28c76f',
+        600: '#24b364',
+        700: '#22a95e',
+        800: '#209f59',
+        900: '#1e9553',
+        950: '#073F40',
+      },
+      warning: colors.amber,
+      danger: colors.rose,
+    },
+
+    plugins: [require('@tailwindcss/forms')],
+  },
+};

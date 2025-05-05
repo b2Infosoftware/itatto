@@ -1,0 +1,6 @@
+.priceLegend {
+  @apply flex flex-wrap pl-5 pt-5 pb-2;
+  .historicalDataButton {
+    @apply hidden;
+  }
+}

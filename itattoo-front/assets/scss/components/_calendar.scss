@@ -1,0 +1,406 @@
+.fc {
+    @apply overflow-auto w-full;
+
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+
+    .fc-scrollgrid-sync-table,
+    .fc-col-header,
+    .fc-daygrid-body,
+    .fc-timegrid-body,
+    .fc-timegrid-body .fc-timegrid-slots table,
+    &.fc-media-screen .fc-timegrid-cols table {
+        width: 100% !important;
+    }
+
+    .fc-license-message {
+        @apply hidden;
+    }
+
+
+    &.fc-theme-standard {
+
+        td {
+            @apply border-input-light dark:border-input-dark;
+        }
+
+        th {
+            @apply text-[10px] sm:text-xs border-input-light dark:border-input-dark uppercase bg-white dark:bg-slate-950;
+        }
+    }
+
+    thead tr th[aria-hidden="true"] {
+        @apply border-0 border-t;
+
+        &+td {
+            @apply border-0;
+        }
+    }
+
+    .fc-view {
+        .fc-timegrid-slots {
+            colgroup>col {
+                width: 2.5rem !important;
+            }
+        }
+
+        .fc-scroller {
+            overflow: auto !important;
+        }
+
+        .fc-timegrid-slot {
+            @apply border border-gray-200 dark:border-input-dark h-6 border-l-0;
+
+            &.fc-timegrid-slot-minor {
+                @apply border-gray-200/70 dark:border-slate-200/5
+            }
+
+            &.fc-timegrid-slot-label {
+                @apply text-[10px] align-baseline pt-1 border-r-0;
+            }
+        }
+
+
+
+        .fc-scrollgrid {
+            @apply border-input-light bg-white dark:bg-transparent dark:border-slate-200/10;
+
+            .fc-scrollgrid-sync-inner {
+                @apply h-10 flex items-center justify-center
+            }
+        }
+
+        .fc-scrollgrid-section-sticky {
+            >* {
+                @apply bg-transparent;
+            }
+        }
+
+        .fc-timegrid-col.fc-day-today {
+            @apply bg-primary-500/5;
+        }
+
+
+        .fc-event {
+            @apply border text-xs -right-1 cursor-pointer bg-transparent p-0 overflow-hidden;
+
+            &.fc-event-mirror {
+                @apply border-dashed bg-gray-100 border-gray-400 dark:border-input-dark dark:bg-transparent;
+
+                .fc-event-time {
+                    @apply text-gray-500 dark:text-white;
+                }
+
+                .event-details {
+                    @apply hidden;
+                }
+            }
+
+            .event-title {
+                @apply text-[14px] mt-1;
+            }
+
+            &.fc-event-resizable {
+                .fc-event-resizer-end {
+                    @apply bg-transparent h-3 bottom-0 text-center items-center hidden w-full justify-center rounded-b text-black/40;
+
+                    &:after {
+                        content: '=';
+                    }
+                }
+
+                &:hover {
+                    .fc-event-resizer-end {
+                        @apply flex;
+                    }
+                }
+            }
+
+            &.fc-bg-event {
+                @apply opacity-100 border-none w-full rounded-md;
+            }
+
+            .event-item-wrapper {
+                @apply flex flex-col w-full relative h-full rounded-sm px-1;
+
+                &.is-break {
+                    @apply bg-gray-400/20 dark:bg-gray-400/50 text-base flex items-center justify-center flex-col;
+
+                    .event-title {
+                        @apply dark:text-white font-semibold;
+                    }
+                }
+
+                &.not-upcoming {
+                    @apply opacity-60;
+                }
+
+
+
+                &:hover {
+                    .event-tooltip {
+                        @apply block;
+                    }
+                }
+            }
+
+            .event-status {
+                @apply relative flex items-center justify-center rounded-full text-center uppercase text-[9px] leading-none h-3.5 pt-[1px] font-semibold mt-0.5;
+            }
+
+            .fc-event-time {
+                @apply absolute bottom-0 right-0 text-[10px] px-1 rounded;
+            }
+
+            .event-details {
+                @apply text-[11px];
+
+                ul {
+                    @apply flex flex-col mt-1.5 gap-y-1;
+                }
+
+                li {
+                    @apply flex gap-x-2 leading-none text-[12px];
+                }
+            }
+        }
+
+        .fc-non-business {
+            @apply bg-gray-300/20 dark:bg-slate-200/20 dark:bg-blend-difference;
+            background-image: url('/images/nonworkinghours.png');
+        }
+
+
+        // DAY VIEW
+        &.fc-timeGridOneDay-view {
+            .fc-daygrid-day-frame {
+                @apply relative flex-col pt-4;
+            }
+
+            .event-item-wrapper {
+                @apply flex w-full relative rounded-sm px-1 text-sm;
+
+                .event-details {
+                    li {
+                        @apply text-[11px] leading-none;
+                    }
+                }
+            }
+
+        }
+
+        // MONTH VIEW
+        &.fc-dayGridMonth-view {
+            .fc-non-business {
+                @apply z-0;
+            }
+
+            .fc-daygrid-body tbody {
+                height: calc(100vh - 14rem);
+            }
+
+            .fc-day {
+                @apply overflow-hidden;
+            }
+
+            .fc-daygrid-day-top {
+                @apply absolute text-xs top-0 w-full text-right;
+            }
+
+            .fc-daygrid-day-events {
+                @apply relative z-[1] w-full;
+            }
+
+            .fc-daygrid-event-harness {
+
+                &::before,
+                &::after {
+                    @apply hidden;
+                }
+
+                .fc-event {
+                    @apply m-0 left-0 p-[1px] border-none;
+
+                    .event-title {
+                        @apply font-normal;
+                    }
+
+                    .event-details,
+                    .event-status {
+                        @apply hidden;
+                    }
+                }
+            }
+
+            .fc-daygrid-day-frame {
+                @apply relative flex-col pt-4;
+            }
+
+            .event-item-wrapper {
+                @apply flex w-full relative rounded-sm px-1;
+            }
+
+        }
+
+
+        // LIST VIEW
+        &.fc-listWeek-view,
+        &.fc-listMonth-view,
+        &.fc-listYear-view,
+        &.fc-listRange-view,
+        &.fc-listDay-view {
+            @apply dark:border-input-dark;
+
+            .fc-list-day-cushion {
+                @apply dark:bg-slate-950;
+
+
+            }
+        }
+
+        .fc-event.fc-list-event {
+            @apply bg-white dark:bg-slate-900;
+
+            .event-item-wrapper {
+                background-color: transparent !important;
+
+                .event-status {
+                    @apply -mt-[3px] max-w-64
+                }
+
+                .event-title {
+                    @apply text-gray-700 dark:text-gray-200 text-base capitalize;
+                }
+
+                .event-details {
+                    ul {
+                        @apply text-gray-700 dark:text-gray-200 flex md:flex-row space-x-2;
+
+                        li {
+                            @apply text-sm items-center;
+                        }
+                    }
+                }
+
+                .fc-event-time {
+                    @apply hidden;
+                }
+            }
+
+            &:hover {
+                >* {
+                    @apply bg-transparent;
+                }
+            }
+
+        }
+
+    }
+
+    .fc-timegrid-slot-label-cushion {
+        @apply px-0;
+    }
+
+
+
+}
+
+.fc .fc-col-header-cell-cushion {
+    font-size: 11px;
+}
+
+
+.fc-direction-ltr .fc-timegrid-slot-label-frame {
+    text-align: left !important;
+}
+
+// Popover for month view
+.fc-theme-standard {
+    .fc-popover {
+        @apply border-none rounded shadow-2xl;
+
+        .fc-popover-header {
+            @apply bg-slate-900 border-b border-slate-200/20;
+        }
+
+
+        .fc-popover-body {
+            @apply bg-slate-900;
+        }
+
+        .event-item-wrapper {
+            @apply flex w-full relative rounded px-1;
+        }
+
+        .fc-event {
+            .event-details {
+                @apply hidden;
+            }
+
+        }
+    }
+}
+
+
+.fc-timegrid-event-harness-inset .fc-timegrid-event,
+.fc-timegrid-event.fc-event-mirror,
+.fc-timegrid-more-link {
+    @apply shadow-none;
+}
+
+
+// TOOLTIP
+.event-tooltip {
+    @apply bg-white dark:bg-slate-900 dark:border-slate-800 border rounded-[3px] shadow-md border-gray-400 px-3 max-w-[170px] py-3 fixed z-[20] dark:text-white text-gray-700 -translate-y-full -mt-4 text-sm;
+
+    .status {
+        @apply bg-white text-slate-950 dark:bg-slate-950 dark:text-white w-full text-sm flex items-center justify-center rounded-[4px] uppercase text-xs font-semibold mb-1;
+    }
+
+    ul {
+        @apply flex flex-col mt-1.5 gap-y-1 text-xs;
+    }
+
+    li {
+        @apply flex gap-x-2 leading-none;
+    }
+
+    &:after {
+        content: "";
+        @apply absolute top-full left-1/2 bg-white dark:bg-slate-900 dark:border-slate-800 w-4 h-4 rotate-45 -ml-[8px] -mt-[8px] border border-gray-400 border-l-transparent border-t-transparent dark:border-l-transparent dark:border-t-transparent shadow-lg;
+    }    
+
+}
+
+
+
+.shake {
+    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+    transform: translate3d(0, 0, 0);
+    perspective: 1000px;
+
+    @keyframes shake {
+
+        10%,
+        90% {
+            transform: translate3d(-2px, 0, 0);
+        }
+
+        20%,
+        80% {
+            transform: translate3d(3px, 0, 0);
+        }
+
+        30%,
+        50%,
+        70% {
+            transform: translate3d(-6px, 0, 0);
+        }
+
+        40%,
+        60% {
+            transform: translate3d(6px, 0, 0);
+        }
+    }
+}

@@ -1,0 +1,43 @@
+.plansWrapper {
+  @apply grid gap-6;
+
+  .planCard {
+    @apply relative bg-white shadow-md rounded-lg border-2 border-slate-200 dark:bg-slate-900 dark:border-input-dark p-4 flex flex-col items-center;
+
+    &.popular {
+      @apply border-primary-500/60;
+    }
+
+    &.active {
+      @apply shadow-xl xl:-translate-y-5 rounded-md border-2 border-slate-200;
+
+      .topBorder {
+        @apply hidden;
+      }
+    }
+
+    .price {
+      @apply text-primary text-2xl font-semibold inline-flex;
+    }
+
+    .popular {
+      @apply bg-primary-500/40 text-primary-600 px-2 py-1 rounded text-xs absolute right-4 top-4;
+      font-weight: 600;
+      letter-spacing: .5px;
+
+    }
+
+    .features {
+      @apply px-5 pt-4 pb-5 opacity-80 text-base w-full;
+
+      li {
+        @apply flex py-1;
+
+        &:before {
+          content: '●';
+          margin-right: .5rem;
+        }
+      }
+    }
+  }
+}

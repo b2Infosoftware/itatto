@@ -1,0 +1,23 @@
+.alert {
+  @apply flex px-3 py-3 rounded text-center w-full items-center;
+
+  &.danger {
+    @apply bg-danger-500/20 text-danger-500;
+  }
+
+  &.success {
+    @apply bg-success-500/20 text-success-500;
+  }
+
+  &.info {
+    @apply bg-primary-500/20 text-primary-500;
+  }
+
+  &.warning {
+    @apply bg-warning-500/20 text-warning-500;
+  }
+
+  &.slate {
+    @apply bg-slate-500/20 text-slate-500;
+  }
+}

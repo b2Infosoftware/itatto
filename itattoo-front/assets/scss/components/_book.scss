@@ -1,0 +1,310 @@
+.calendar {
+  @apply block w-full bg-white shadow-md rounded-md p-10 my-10;
+
+  .calendar-month {
+    @apply flex justify-center w-full items-center mb-5 max-md:mb-3;
+
+    strong {
+      @apply text-gray-700 text-lg font-bold mx-10 max-md:text-sm;
+    }
+
+    button {
+      @apply text-lg max-md:text-sm text-gray-700 py-1 px-3.5 rounded-full duration-300 transition;
+
+      &:hover {
+        @apply bg-success-200 py-1 px-3.5 rounded-full;
+      }
+    }
+  }
+
+  .calendar-days {
+    @apply w-full text-center;
+
+    th {
+      @apply text-xs text-gray-400 py-5 max-md:text-xs max-md:font-medium
+    }
+
+    td {
+
+      .nowday {
+        @apply text-base font-bold text-black max-md:text-xs max-md:font-medium items-center justify-center bg-sky-200 w-[45px] h-[45px] max-lg:w-[35px] max-lg:h-[35px] max-md:w-[30px] max-md:h-[30px]  rounded-full mb-5 duration-300 transition;
+
+        &:hover {
+          @apply bg-sky-400;
+        }
+
+        &.active {
+          @apply bg-success-600 border text-white border-success-900;
+        }
+      }
+
+      .rest {
+        @apply text-base font-bold text-black max-md:text-xs max-md:font-medium items-center justify-center bg-success-50 w-[45px] h-[45px] max-lg:w-[35px] max-lg:h-[35px] max-md:w-[30px] max-md:h-[30px] rounded-full mb-5 cursor-not-allowed;
+      }
+
+      .disable {
+        @apply text-base font-bold text-black max-md:text-xs max-md:font-medium items-center justify-center bg-success-50 w-[45px] h-[45px] max-lg:w-[35px] max-lg:h-[35px] max-md:w-[30px] max-md:h-[30px] rounded-full mb-5 cursor-not-allowed;
+      }
+
+      .work {
+        @apply text-base font-bold text-black max-md:text-xs max-md:font-medium items-center justify-center bg-success-200 w-[45px] h-[45px] max-lg:w-[35px] max-lg:h-[35px] max-md:w-[30px] max-md:h-[30px]  rounded-full mb-5 duration-300 transition;
+
+        &:hover {
+          @apply bg-success-400;
+        }
+
+        &.active {
+          @apply bg-success-600 border text-white border-success-900;
+        }
+      }
+    }
+  }
+}
+
+.public-booking {
+  @apply bg-gray-100 fixed top-0 left-0 z-50 overflow-hidden w-full h-full;
+
+  .booking-card {
+      @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-h-[85vh] max-lg:max-h-[100vh] max-lg:max-w-[100vw] max-w-[60vw] bg-white rounded-xl max-lg:rounded-none max-lg:shadow-none shadow-xl overflow-hidden;
+
+      .booking-card-limit {
+          @apply relative w-full h-full overflow-x-hidden overflow-y-auto;
+
+          .booking-header {
+              @apply w-full overflow-hidden h-[15vh] bg-white relative max-lg:h-[350px] max-md:h-[500px] max-lg:-mt-1;
+
+              .profil {
+                  @apply absolute top-1/2 -translate-y-1/2 z-20 object-cover flex w-full max-md:block justify-between; 
+              
+                  .booking-organisation {
+                      @apply ml-10 max-md:ml-0 max-md:w-full;
+
+                      img {
+                          @apply w-24 h-24 bg-white rounded-full max-md:m-auto; 
+                      }
+                  }
+              
+                  .description {
+                      @apply flex-1 text-white px-8 py-2 max-md:block max-md:w-full max-md:px-0 max-md:text-center;
+              
+                      h2 {
+                          @apply text-2xl font-bold uppercase mb-1 max-md:mx-8;
+                      }
+
+                      p {
+                          @apply text-sm font-medium text-gray-300 overflow-hidden text-ellipsis line-clamp-2 w-72 max-md:m-auto;
+                      }
+                  }
+              
+                  .booking-logo {
+                      @apply flex justify-end items-center h-24 mr-10 max-md:mr-0 max-md:block max-md:mt-10;
+              
+                      img {
+                          @apply w-auto h-8 max-lg:h-6 max-md:m-auto;
+                      }
+                  }
+              }                
+
+              .banner {
+                  @apply w-full h-full object-cover relative z-0;
+
+                  img {
+                    @apply object-cover w-full h-full;
+                  }
+
+                  &::before {
+                      @apply top-0 left-0 absolute w-full h-full bg-black bg-opacity-60 backdrop-blur-sm z-10;
+                      content: " ";
+                  }
+              }
+          }
+
+          .wizard-sidebar {
+            @apply relative top-0 left-0 w-full flex items-center justify-evenly py-3 border border-b-gray-100 overflow-auto whitespace-nowrap;
+        
+            .wizard-space {
+              ul {
+                @apply mx-auto min-w-max;
+                li {
+                  @apply inline-block mx-3;
+        
+                  &.active span {
+                    @apply text-black border-black bg-success-100;
+                  }
+        
+                  &.active strong {
+                    @apply text-black;
+                  }
+        
+                  span {
+                    @apply text-sm mr-5 border-2 border-gray-400 rounded-full font-extrabold 
+                           text-gray-400 w-[30px] aspect-square inline-flex items-center justify-center;
+                }
+                
+        
+                  strong {
+                    @apply text-sm mt-3 text-gray-400 font-normal;
+                  }
+        
+                }
+              }
+            }
+          }
+
+          .wizard-content {
+            @apply relative top-0 left-0 flex items-center justify-center overflow-auto;
+
+            .single-alert {
+              @apply w-full flex justify-center items-center h-full;
+
+              h3 {
+                @apply text-2xl font-bold;
+              }
+            }
+        
+            .wizard-space-content { 
+              @apply w-full max-md:mx-auto block relative h-full py-10;
+
+              .no-service-message {
+                @apply text-xl font-bold w-full pt-10 pb-6 text-danger-400 flex justify-center;
+              }
+
+              .wizard-mobile-space {
+                @apply mx-5;
+              }
+        
+              h3 {
+                @apply text-xl font-bold mb-2 max-md:text-lg text-gray-500;
+              }
+        
+              p {
+                @apply text-base max-md:text-sm font-normal text-gray-500 mb-5;
+              }
+        
+              .wizard-navigation {
+                @apply flex justify-between items-center mt-10 pb-10 max-md:pb-10;
+        
+                .next {
+                  @apply px-8 py-2 text-white font-bold uppercase bg-success-500 text-xs rounded-md cursor-pointer duration-300 transition;
+        
+                  &:hover {
+                    @apply bg-success-600;
+                  }
+                }
+        
+                .back {
+                  @apply px-8 py-2 text-white font-bold uppercase bg-warning-500 text-xs rounded-md cursor-pointer duration-300 transition;
+        
+                  &:hover {
+                    @apply bg-warning-600;
+                  }
+        
+                  &.first-step {
+                    @apply bg-danger-300 cursor-not-allowed;
+                  }
+                }
+              }
+        
+              select {
+                @apply w-full rounded-md py-2 px-10 border border-gray-300 cursor-pointer text-gray-500;
+              }
+              
+              .radio-box {
+                @apply w-full block mt-5 overflow-x-hidden overflow-y-auto;
+        
+                .radio-item {
+                  @apply w-full overflow-hidden border border-gray-300 rounded-md py-5 px-10 mb-5 flex cursor-pointer;
+        
+                  .title {
+                    @apply text-gray-600 font-medium text-base;
+                  }
+        
+                  .price {
+                    @apply ml-auto pt-1.5 pb-1 rounded-sm px-3 bg-success-400 text-white font-bold text-xs uppercase mr-2;
+                  }
+        
+                  .duration {
+                    @apply pt-1.5 pb-1 rounded-sm px-3 bg-sky-400 text-white font-bold text-xs uppercase;
+                  }
+        
+                  &.active {
+                    @apply border-success-600 bg-success-50;
+        
+                    .title {
+                      @apply text-gray-900;
+                    }
+                  }
+                }
+        
+                input[type="radio"] {
+                  @apply hidden;
+                }
+              }
+        
+              .slot-outer {
+                @apply max-md:block;
+        
+                .slot-left {
+                  @apply max-md:w-full;
+                }
+        
+                .slot-right {
+                  @apply max-md:w-full;
+                }
+              }
+        
+              .confirm-block {
+                h2 {
+                  @apply text-lg w-full block font-bold text-gray-800;
+                }
+                
+                ul {
+                  @apply flex flex-col my-5;
+        
+                  li {
+                    @apply flex flex-row;
+        
+                    strong {
+                      @apply w-[230px] text-base font-normal text-gray-800;
+        
+                      &::before {
+                        @apply text-lg mr-3 text-gray-400;
+                        content: "●";
+                      }
+                    }
+        
+                    span {
+                      @apply text-base font-normal text-gray-500;
+                    }
+                  }
+                }
+              }
+        
+              .accept-tos {
+                @apply w-full overflow-hidden flex flex-col my-10;
+        
+                .accept-tos-list {
+                  @apply flex flex-row;
+        
+                  input[type="checkbox"] {
+                    @apply mr-5 w-5 h-5 cursor-pointer bg-gray-50;
+                  }
+        
+                  p {
+                    @apply text-base font-semibold text-gray-800;
+        
+                    a {
+                      @apply text-success-600 duration-300 transition;
+        
+                      &:hover {
+                        @apply text-success-700;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+      }
+  }
+}

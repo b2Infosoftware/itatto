@@ -1,0 +1,22 @@
+.organisationsList {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 my-8;
+
+    .org {
+        @apply flex items-center space-x-4 cursor-pointer;
+
+        i {
+            @apply w-4 h-4 flex items-center justify-center rounded-full border border-gray-400
+        }
+
+        &.selected {
+            i {
+                @apply border-primary;
+            }
+
+            em {
+                @apply w-2 h-2 block rounded-full bg-primary
+            }
+        }
+    }
+
+}

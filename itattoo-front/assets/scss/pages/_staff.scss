@@ -1,0 +1,116 @@
+.staffCrudWrapper {
+    @apply flex flex-col w-full space-y-4;
+
+    .userCard {
+        @apply w-full;
+
+        .avatar {
+            @apply bg-black/10 rounded-xl w-28 h-28 flex mx-auto mb-4 mt-10 overflow-hidden;
+
+            img {
+                @apply object-cover
+            }
+        }
+
+        .badge {
+            @apply p-2 rounded bg-primary dark:bg-primary/40 text-white inline-block font-semibold;
+        }
+
+        ul {
+            li {
+                @apply mb-1.5;
+
+                span {
+                    @apply first:font-semibold first:mr-2;
+                }
+            }
+        }
+    }
+
+    .serviceItem {
+        @apply flex items-center justify-between mb-4 bg-slate-800/10 rounded-md p-4 relative overflow-hidden pl-5 cursor-pointer hover:bg-slate-800/20;
+
+        img {
+            @apply w-12 h-12 rounded-lg mr-4
+        }
+
+        h6 {
+            @apply text-lg font-semibold;
+        }
+
+        p {
+            @apply text-xs leading-snug truncate;
+        }
+
+        .color-code {
+            @apply absolute w-1.5 h-full block top-0 left-0;
+        }
+
+        .check-box {
+            @apply w-5 h-5 rounded border-2 flex items-center justify-center border-slate-200/20 text-sm pt-0.5;
+
+            .nuxt-icon {
+                @apply hidden;
+            }
+
+            &.active {
+                @apply border-primary text-primary;
+
+                .nuxt-icon {
+                    @apply block;
+                }
+            }
+        }
+
+        .check-box-eye {
+            @apply w-5 h-5  rounded flex items-center justify-center text-3xl pt-0.5;
+
+            .nuxt-icon {
+                @apply text-danger-300
+            }
+
+            &.active {
+
+                .nuxt-icon {
+                    @apply text-success-500;
+                }
+            }
+        }
+    }
+
+    .workingDay {
+        @apply flex flex-col md:flex-row justify-between border-slate-200/20 py-4 relative border rounded-xl mb-4 px-4;
+
+        .intervals {
+            @apply flex flex-col w-full md:w-3/5 gap-4 mt-4 md:mt-0;
+
+            .form-group {
+                // @apply max-w-24;
+
+                select {
+                    @apply py-1;
+                }
+            }
+
+            .is-break {
+                @apply relative md:absolute md:-left-14 text-sm top-0.5 pt-0.5 opacity-50;
+            }
+
+        }
+
+    }
+
+
+    .timeOffEntry {
+        @apply flex md:flex-row justify-between border-slate-200/20 py-4 relative border rounded-xl mb-4 pl-4 pr-16;
+
+        em {
+            @apply not-italic bg-slate-200/20 rounded px-2 py-1 font-medium
+        }
+
+        .btn {
+            @apply absolute right-4 top-0 translate-y-1/2;
+        }
+    }
+
+}

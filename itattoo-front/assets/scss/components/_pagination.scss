@@ -1,0 +1,48 @@
+.paginationWrapper {
+    @apply w-full flex;
+
+    ul {
+        @apply inline-flex;
+    }
+
+    li {
+        margin: 0 !important;
+        padding: 0 !important;
+
+        &::before {
+            display: none !important;
+        }
+
+        &.hide {
+            @apply flex;
+
+            +.hide {
+                display: none !important;
+            }
+        }
+
+        a {
+            @apply bg-divider-light dark:bg-divider-dark rounded text-gray-500 dark:text-gray-400 text-xs w-6 h-6 mx-0.5 flex items-center justify-center hover:bg-primary-400 hover:text-white md:w-9 md:h-9 md:text-base md:mx-1.5;
+
+            &.active {
+                @apply bg-primary-500 text-white;
+            }
+
+            &.disabled {
+                @apply opacity-50 bg-divider-light dark:bg-divider-dark cursor-not-allowed;
+            }
+        }
+
+        i {
+            @apply block h-1 bg-divider-light rounded-full px-1 self-end mx-2;
+        }
+    }
+
+    &.sm {
+        li {
+            a {
+                @apply md:text-xs md:w-4 md:h-4;
+            }
+        }
+    }
+}

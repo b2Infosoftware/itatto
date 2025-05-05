@@ -1,0 +1,51 @@
+.card.serviceCard {
+    @apply shadow-sm relative overflow-hidden;
+
+    img {
+        @apply w-12 h-12 rounded-lg mr-4
+    }
+
+    h6 {
+        @apply text-lg font-semibold;
+    }
+
+    p {
+        @apply text-xs leading-snug pr-10;
+    }
+
+    .color-code {
+        @apply w-1.5 block absolute top-0 left-0 h-full z-[1];
+    }
+
+    .info {
+        @apply flex justify-between;
+
+        >div {
+            @apply flex items-center mt-4;
+
+            .nuxt-icon {
+                @apply bg-gray-200 dark:bg-slate-200/10 rounded-md text-gray-400 dark:text-slate-200 p-2 text-base;
+            }
+
+            span {
+                @apply flex flex-col leading-none pl-2 text-xs;
+
+                i {
+                    @apply not-italic opacity-70 first:font-semibold first:text-sm first:opacity-100;
+                }
+
+                em {
+                    @apply not-italic;
+                }
+            }
+        }
+    }
+
+    .actions {
+        @apply flex justify-between pt-4 mt-4 border-t border-slate-200/20;
+    }
+
+    .move {
+        @apply absolute right-0 top-0
+    }
+}

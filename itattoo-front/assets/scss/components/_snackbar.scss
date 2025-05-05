@@ -1,0 +1,34 @@
+.snackbar-wrapper {
+  @apply fixed top-4 right-4;
+  z-index: 99999999 !important;
+
+  .snackbar {
+    @apply rounded py-3 px-4 text-white text-sm font-medium min-w-44;
+    box-shadow: -3px -5px 15px rgba(0, 0, 0, 0.05),
+      7px 10px 25px rgba(0, 0, 0, 0.06);
+    &.error {
+      @apply bg-danger-200 text-danger-600;
+    }
+    &.success {
+      @apply bg-success-200 text-success-600;
+    }
+    &.info {
+      @apply bg-primary-100 text-primary-600;
+    }
+    &.warning {
+      @apply bg-warning-300 text-slate-900;
+    }
+  }
+}
+
+// TRANSITION
+.snack-enter-active,
+.snack-leave-active {
+  @apply transition duration-200;
+}
+.snack-enter {
+  @apply transform translate-x-full;
+}
+.snack-leave-to {
+  @apply transform translate-x-full opacity-0;
+}

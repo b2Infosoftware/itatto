@@ -1,0 +1,15 @@
+.editor-buttons {
+    @apply bg-gray-200 dark:bg-slate-200/20 rounded-t py-1 px-2 flex gap-1;
+
+    button {
+        @apply inline-flex items-center justify-center w-5 h-5 bg-gray-400 rounded-sm;
+
+        &.is-active {
+            @apply bg-success-500;
+        }
+    }
+}
+
+.tiptap {
+    @apply min-h-32
+}

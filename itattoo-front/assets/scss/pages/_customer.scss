@@ -1,0 +1,57 @@
+.customerPage {}
+
+.appointmentCard {
+    @apply cursor-pointer flex flex-col md:flex-row mb-4 border p-4 rounded-lg gap-x-2 text-sm border-gray-300 dark:border-input-dark;
+
+    .nuxt-icon {
+        @apply text-base;
+    }
+
+    i {
+        @apply not-italic;
+    }
+
+    >div {
+        @apply flex flex-col leading-none space-y-2;
+
+        >div {
+            @apply flex space-x-2 first:font-semibold;
+
+            &.details {
+                i {
+                    &::before {
+                        content: '•';
+                        @apply inline-block mr-2
+                    }
+
+                    @apply first:before:hidden
+                }
+            }
+        }
+    }
+}
+
+
+.mediaCard {
+    @apply h-40 bg-contain bg-center rounded-t overflow-hidden;
+}
+
+.mediaActions {
+    @apply flex rounded-b px-4 py-2 justify-between bg-gray-100 dark:bg-slate-200/20;
+}
+
+.project-files {
+    @apply flex flex-col py-4;
+
+    li {
+        @apply px-4 py-2 flex justify-between border rounded mb-4 border-gray-200 dark:border-input-dark;
+
+        >span {
+            @apply flex items-center text-sm;
+
+            .nuxt-icon {
+                @apply mr-2;
+            }
+        }
+    }
+}

@@ -1,0 +1,12 @@
+.dropdown-items-wrapper {
+    @apply origin-top-right absolute top-full min-w-44 bg-white dark:bg-slate-900 border border-slate-200/20 py-1.5 rounded shadow-lg overflow-hidden mt-1 right-0 z-20;
+
+    .dropdown-item {
+        @apply font-medium text-sm text-primary-500 dark:text-white hover:text-primary-600 flex items-center py-1 px-3 cursor-pointer hover:bg-primary/5;
+
+        >* {
+            @apply w-full block text-left;
+        }
+    }
+
+}

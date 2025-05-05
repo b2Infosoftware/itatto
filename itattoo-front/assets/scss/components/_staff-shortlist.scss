@@ -1,0 +1,50 @@
+.staffShortlist {
+    @apply flex space-x-2 items-center;
+
+    .btn-add {
+        @apply text-sm flex max-md:mr-1 items-center mr-3 px-2 h-[30px] rounded bg-[#85bd4a] hover:bg-[#628E34] text-white transition duration-200 max-md:px-1 max-md:h-[22px] max-md:text-xs;
+    }
+
+    .btn-more-profile {
+        @apply px-5 py-2 rounded-full hover:bg-[#628E34] duration-200 transition text-xs text-white mt-1 ml-2 max-md:py-1 max-md:px-3 max-md:mt-2.5;
+    }
+
+    .more-profile-box {
+        @apply absolute top-full w-[230px] mt-1 ml-2 max-h-[280px] overflow-x-hidden overflow-y-auto bg-white shadow-md rounded-md left-0 flex flex-col px-3 pt-3 pb-1 border-gray-300 border max-md:w-[220px] dark:bg-slate-900 dark:border-slate-800;
+    }
+    
+    .more-profile-box button {
+        @apply flex items-center gap-x-3 py-2 px-3 max-md:px-2 max-md:py-1.5 max-md:gap-x-2 dark:bg-slate-950 dark:hover:bg-slate-800 rounded-md hover:bg-gray-200 bg-gray-100 mb-3 duration-200 transition;
+    }
+
+    .more-profile-box button:hover .name {
+        @apply dark:text-white;
+    }
+    
+    .more-profile-box img.avatar-left {
+        @apply w-8 h-8 rounded-full; 
+    }
+    
+    .more-profile-box .name {
+        @apply text-sm font-medium text-gray-700 max-md:text-xs dark:text-gray-400;
+    }
+
+    .btn-profile {
+        @apply text-sm flex items-center pl-2 py-2 rounded-full bg-gray-100 border border-gray-300 hover:bg-gray-200 hover:border transition duration-200 text-black dark:bg-[#292c40] dark:text-white dark:border-slate-950 dark:hover:border-slate-950 dark:hover:bg-[#252836] max-md:pl-1;
+
+        .avatar-left {
+            @apply rounded-full mr-3 ml-1 max-md:mr-2 text-[10px] w-6 h-6 inline-flex items-center justify-center font-semibold text-white dark:text-gray-200;
+        }
+
+        &.primary {
+            .avatar {
+                @apply text-white;
+            }
+        }
+    }
+
+
+    .name {
+        @apply hidden lg:flex
+    }
+}

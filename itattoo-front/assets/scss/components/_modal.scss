@@ -1,0 +1,47 @@
+.modalWrapper {
+
+  @apply fixed z-[99];
+
+  .modal-backdrop {
+    @apply fixed inset-0 bg-black bg-opacity-30 z-50 backdrop-blur-sm;
+  }
+
+  .modal-box {
+    @apply fixed inset-0 z-50 overflow-hidden flex items-center py-4 justify-center transform px-4 sm:px-6;
+  }
+
+  .card {
+    @apply rounded-lg shadow-lg max-w-lg w-full max-h-full relative;
+
+    &.flat {
+      @apply shadow-none;
+    }
+
+    .close-btn {
+      @apply absolute inline-block z-50 right-0 top-0 transition-all duration-75 shadow-none;
+    }
+
+    &.show-overflow {
+      @apply overflow-visible;
+    }
+  }
+
+  .modal-container {
+    @apply p-5 flex space-x-4 text-center;
+
+
+    .title {
+      @apply text-2xl font-semibold opacity-60 block text-center pb-5;
+    }
+
+    .buttons {
+      @apply flex flex-wrap justify-center space-x-4;
+    }
+  }
+
+  &.wide {
+    .card {
+      @apply max-w-4xl;
+    }
+  }
+}

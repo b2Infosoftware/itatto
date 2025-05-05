@@ -1,0 +1,106 @@
+// Forms
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
+
+[type='text'],
+[type='email'],
+[type='url'],
+[type='password'],
+[type='number'],
+[type='date'],
+[type='datetime-local'],
+[type='month'],
+[type='search'],
+[type='tel'],
+[type='time'],
+[type='week'],
+textarea,
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  border-width: 1px;
+  border-radius: 0px;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+/* HIDE ARROWS AND SPINNERS */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+.form-input,
+.form-textarea,
+.form-multiselect,
+.form-select,
+.form-checkbox,
+.form-radio {
+  @apply text-sm text-slate-800 bg-white border;
+
+  &:focus {
+    @apply ring-0;
+  }
+
+  &.error {
+    @apply border-danger-300;
+  }
+
+  &.disabled {
+    @apply disabled:bg-slate-100 read-only:bg-slate-100 cursor-not-allowed;
+  }
+
+}
+
+.form-input,
+.form-textarea,
+.form-multiselect,
+.form-select,
+.form-checkbox {
+  @apply rounded;
+}
+
+.form-input,
+.form-textarea,
+.form-multiselect,
+.form-select {
+  @apply leading-5 py-2 px-3 border-input-light dark:border-input-dark hover:border-slate-300 focus:border-primary-300;
+
+  &.flatpickr-input {
+    @apply pl-9;
+  }
+
+}
+
+.form-input,
+.form-textarea {
+  @apply placeholder-gray-400;
+}
+
+.form-select {
+  @apply pr-10;
+}
+
+/* Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}

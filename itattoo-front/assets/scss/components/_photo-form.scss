@@ -1,0 +1,27 @@
+.photoForm {
+    @apply flex flex-col justify-center gap-4;
+
+    input[type="file"] {
+        @apply hidden;
+    }
+
+    .thumbnail {
+        @apply flex aspect-square relative rounded-md overflow-hidden;
+
+        img {
+            @apply block object-cover;
+        }
+
+        .actions {
+            @apply flex justify-center flex-col items-center bg-slate-800/80 w-full absolute h-full left-0 top-0 opacity-0;
+        }
+
+        &:hover {
+
+            .actions {
+                @apply opacity-100;
+            }
+        }
+    }
+
+}

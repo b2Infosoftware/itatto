@@ -1,0 +1,146 @@
+.appointmentSection {
+    @apply z-50 fixed top-0 left-0 bottom-0 right-0;
+
+    .overlay {
+        @apply fixed inset-0 bg-black bg-opacity-50 z-50 backdrop-blur-sm;
+    }
+
+    .appointment-box {
+        @apply fixed flex flex-col z-50 transform left-0 right-0 top-0 bottom-0 bg-white dark:bg-slate-900 md:top-10 md:bottom-10 md:left-10 md:right-10 2xl:top-16 2xl:bottom-16 xl:left-1/2 xl:-translate-x-1/2 xl:w-[900px] rounded-lg shadow-xl;
+    }
+
+    .steps-overview {
+        @apply p-4 md:p-6 border-b border-slate-200/20 flex;
+
+        >div {
+            @apply flex items-center;
+
+            button {
+                @apply flex text-left;
+
+                .nuxt-icon {
+                    @apply mx-0;
+                }
+
+                &:hover {
+                    i {
+                        @apply opacity-80;
+                    }
+                }
+
+                >div {
+                    @apply hidden md:flex text-sm xl:text-base;
+                }
+            }
+
+            i {
+                @apply w-8 md:w-10 h-8 md:h-10 rounded md:mr-4 bg-gray-200 dark:bg-slate-200/20 flex items-center justify-center not-italic;
+
+                .nuxt-icon {
+                    @apply dark:text-white/70 text-lg text-gray-500;
+                }
+            }
+
+            div {
+                @apply flex flex-col;
+
+                .desc {
+                    @apply text-sm text-gray-400 dark:text-slate-200/20;
+                }
+            }
+
+            .nuxt-icon {
+                @apply text-gray-400 dark:text-slate-200/20 text-sm md:text-base lg:text-xl mx-4 lg:mx-6;
+            }
+
+            &.active {
+                i {
+                    @apply bg-primary;
+
+                    .nuxt-icon {
+                        @apply text-white
+                    }
+                }
+            }
+
+            &.hide {
+                @apply hidden
+            }
+        }
+
+    }
+
+    .step-wrapper {
+        @apply p-4 md:p-6 flex flex-grow overflow-auto;
+    }
+
+    .actions {
+        @apply p-4 md:p-6 flex justify-between border-t border-slate-200/20;
+    }
+
+    .customer-card {
+        @apply border-2 border-slate-200/20 flex p-4 md:p-8 rounded-lg flex-col items-center mx-auto w-full max-w-72;
+
+        .name {
+            @apply text-lg font-semibold flex items-center mb-5;
+
+            i {
+                @apply h-10 w-10 bg-primary/20 rounded-md flex items-center justify-center mr-4
+            }
+        }
+    }
+
+
+    // appointment info shown in a modal
+    .appointment-details {
+        @apply fixed flex flex-col z-50 transform left-0 right-0 top-0 bottom-0 bg-white dark:bg-slate-900 md:top-10 md:bottom-auto md:left-10 md:right-10 xl:top-20 xl:left-1/2 xl:-translate-x-1/2 xl:w-[900px] rounded-lg shadow-xl;
+
+        &.duplicate {
+            @apply xl:w-[30rem];
+
+            .duplicate-form {
+                @apply flex flex-col w-full gap-y-4 p-4 bg-gray-100 dark:bg-slate-950/50 mb-4 rounded-lg
+            }
+
+            .remove-btn {
+                @apply cursor-pointer text-danger-500 text-xs bg-danger-500/30 rounded w-5 h-5 flex items-center justify-center;
+            }
+        }
+
+        .header {
+            @apply h-16 p-4 flex justify-between items-center border-b border-slate-200/20;
+
+            >span {
+                @apply font-medium
+            }
+        }
+
+
+        .apt-info-line {
+            @apply flex py-2 text-sm;
+
+            span {
+                @apply first:min-w-24 first:font-semibold;
+
+                &.nuxt-icon {
+                    @apply first:min-w-0;
+                }
+            }
+        }
+
+        .actions {
+            @apply p-4 flex justify-between;
+        }
+    }
+
+
+
+    // cstomers search ( step 2)
+    .customers-dropdown {
+        @apply absolute w-full py-2 rounded-md z-10 overflow-auto max-h-96 bg-white text-gray-700 dark:bg-slate-900 dark:text-white border-2 border-gray-200 dark:border-input-dark border-t-0;
+
+        li {
+            @apply cursor-pointer dark:hover:bg-slate-950 p-2 border-t first:border-t-0 dark:border-input-dark border-gray-200 hover:bg-gray-100
+        }
+    }
+}

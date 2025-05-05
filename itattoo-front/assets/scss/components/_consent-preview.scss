@@ -1,0 +1,69 @@
+.consentPreview {
+    @apply flex flex-col space-y-2 bg-white text-black px-4 md:p-8 rounded h-screen overflow-auto;
+
+    >* {
+        @apply text-left;
+    }
+
+    .form-title {
+        @apply text-3xl text-center font-semibold mb-4;
+    }
+
+    .form-subtitle {
+        @apply text-xl bg-black text-white font-medium mb-8 py-2 px-4 rounded block leading-snug;
+    }
+
+    .parts {
+        @apply flex justify-between py-4;
+
+        >div {
+            @apply flex flex-col;
+
+            span {
+                @apply font-extralight first:font-bold first:mb-4;
+            }
+        }
+    }
+
+    .opening-text,
+    .closing-text {
+        @apply font-thin py-4;
+    }
+
+    .statements {
+        @apply flex flex-col space-y-4;
+
+        >span {
+            @apply border-l-4 pl-5;
+        }
+    }
+
+    .sign-title {
+        @apply font-semibold;
+    }
+
+    .signature {
+        @apply grid grid-cols-2 w-full py-8 gap-x-4;
+
+        span {
+            @apply border-b border-black/80 text-center italic font-medium flex-grow-0 mx-8;
+        }
+
+        div {
+            @apply flex justify-center;
+
+            img {
+                @apply h-10 scale-[2];
+            }
+        }
+    }
+}
+
+.signaturePad {
+    @apply relative flex flex-col space-y-4;
+
+    >span {
+        @apply h-80 rounded overflow-hidden;
+    }
+
+}

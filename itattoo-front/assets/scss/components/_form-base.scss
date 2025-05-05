@@ -1,0 +1,104 @@
+.form-group {
+    @apply relative;
+
+    label {
+        @apply block mb-1 text-sm font-medium;
+    }
+
+    input,
+    .tiptap,
+    textarea {
+        @apply bg-transparent border border-input-light text-gray-700 sm:text-sm rounded-md block w-full p-2.5 focus:outline-none focus:border-gray-800 dark:text-gray-400 dark:focus:border-gray-300 dark:border-input-dark;
+
+        &.color {
+            @apply p-0 w-full bg-transparent border-none cursor-pointer -mt-0.5 scale-110 translate-y-[2%];
+
+            &::-webkit-color-swatch {
+                @apply rounded border-none;
+            }
+
+            &::-moz-color-swatch {
+                @apply rounded border-none;
+            }
+        }
+    }
+
+    .tiptap {
+        @apply rounded-t-none;
+    }
+
+    select {
+        @apply bg-no-repeat bg-white border border-input-light dark:border-input-dark text-gray-700 sm:text-sm rounded-md block w-full p-2.5 focus:outline-none focus:border-gray-800 dark:focus:border-slate-800 bg-transparent dark:text-gray-400 pr-8;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+        background-position: right 0.5rem center;
+        background-size: 1.5rem;
+
+        option {
+            @apply dark:bg-slate-900;
+        }
+    }
+
+    .password-toggle {
+        @apply h-10 w-10 absolute right-0 top-6 mt-[2px] mr-[2px] rounded-md rounded-l-none transition-colors hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer text-lg text-gray-700 dark:text-gray-400 flex items-center justify-center;
+    }
+
+    &.error {
+
+        input,
+        textarea,
+        select {
+            @apply border-danger-500 transition-colors;
+        }
+
+        .err-msg {
+            @apply text-[10px] bottom-0 text-danger-500 pl-1;
+        }
+    }
+
+    .form-checkbox {
+        label {
+            @apply border-0;
+        }
+    }
+
+    .duration {
+        @apply relative;
+
+        .operator-dropdown {
+            @apply inline-flex absolute left-0;
+        }
+
+
+        input {
+            @apply pr-28 min-w-32;
+        }
+
+        select {
+            @apply w-28 absolute right-[1px] top-[1px] border-none h-[40px];
+        }
+
+
+        &.with-operator {
+            input {
+                @apply pl-9 min-w-40;
+            }
+        }
+    }
+
+    &.sm {
+
+        input,
+        textarea,
+        select {
+            @apply h-8 py-1 px-4 text-sm;
+        }
+
+        .duration {
+            select {
+                @apply h-[30px]
+            }
+        }
+    }
+
+
+}
